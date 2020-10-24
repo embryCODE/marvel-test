@@ -1,0 +1,23 @@
+{
+  "name": "marvel-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --host=localhost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embryCODE/marvel-test.git"
+  },
+  "author": "mason@embrycode.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/embryCODE/marvel-test/issues"
+  },
+  "homepage": "https://github.com/embryCODE/marvel-test#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
