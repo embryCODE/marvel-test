@@ -30,11 +30,18 @@ function formatComicsData(comicsData) {
 }
 
 function buildApp(appDiv, data) {
+  // Build an array of divs, one for each character
   const characterDivs = buildCharacterDivs(data)
 
-  characterDivs.forEach((characterDiv) => {
-    appDiv.appendChild(characterDiv)
-  })
+  // Now we have an array called characterDivs
+  // Each element in the array is a div
+  // For each element in the array, append a child
+  // to our top-level app div
+  for (let i = 0; i < characterDivs.length; i++) {
+    const thisParticularCharacterDiv = characterDivs[i]
+
+    appDiv.appendChild(thisParticularCharacterDiv)
+  }
 }
 
 function buildCharacterDivs(characters) {
