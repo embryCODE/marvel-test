@@ -1,13 +1,16 @@
 const API_KEY = 'f929092fa2c5d337af8590ea505a1e45'
 const BASE_URL = 'https://gateway.marvel.com/v1/public/'
 const COMICS_URL = BASE_URL + 'comics?apikey=' + API_KEY
+const APP_DIV = document.getElementById('vanillaAppMountPoint')
+
+// This will ge replaced in the buildApp function after the API call returns
+APP_DIV.innerText = 'Loading...'
 
 fetch(COMICS_URL)
   .then((res) => res.json())
-  .then((res) => handleComicsData(res.data))
+  .then((res) => handleComicsData(APP_DIV, res.data))
 
-function handleComicsData(comicsData) {
-  const appDiv = document.getElementById('vanillaAppMountPoint')
+function handleComicsData(appDiv, comicsData) {
   const formattedComicsData = formatComicsData(comicsData)
 
   buildApp(appDiv, formattedComicsData)
@@ -31,6 +34,9 @@ function formatComicsData(comicsData) {
 
 function buildApp(appDiv, data) {
   const characterDivs = buildCharacterDivs(data)
+
+  // Clear out the loading message
+  appDiv.innerText = ''
 
   characterDivs.forEach((characterDiv) => {
     appDiv.appendChild(characterDiv)

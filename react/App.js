@@ -59,11 +59,7 @@ function App() {
         null,
         character.title
       ),
-      React.createElement(
-        'p',
-        null,
-        character.description
-      )
+      React.createElement('p', { dangerouslySetInnerHTML: { __html: character.description } })
     );
   });
 }

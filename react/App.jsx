@@ -41,7 +41,8 @@ function App() {
     return (
       <div key={character.id}>
         <h3>{character.title}</h3>
-        <p>{character.description}</p>
+        {/* This dangerouslySetInnerHTML thing is a bit of a hack. Ignore. */}
+        <p dangerouslySetInnerHTML={{ __html: character.description }} />
       </div>
     )
   })
