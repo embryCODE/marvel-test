@@ -7,7 +7,7 @@ fetch(COMICS_URL)
   .then((res) => handleComicsData(res.data))
 
 function handleComicsData(comicsData) {
-  const appDiv = document.getElementById('app')
+  const appDiv = document.getElementById('vanillaAppMountPoint')
   const formattedComicsData = formatComicsData(comicsData)
 
   buildApp(appDiv, formattedComicsData)
